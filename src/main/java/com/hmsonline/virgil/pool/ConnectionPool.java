@@ -1,7 +1,7 @@
 package com.hmsonline.virgil.pool;
 
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.thrift.transport.TTransportException;
 import org.slf4j.Logger;
@@ -17,7 +17,7 @@ public class ConnectionPool {
     private static final int CONNECTION_WAIT_TIME = 500;
     private static Object LOCK = new Object();
 
-    private static LinkedList<VirgilConnection> free = new LinkedList<VirgilConnection>();
+    private static ConcurrentLinkedQueue<VirgilConnection> free = new ConcurrentLinkedQueue<VirgilConnection>();
     private static VirgilConnection embeddedServer = null;
 
     public static void initializePool() throws TTransportException {
@@ -44,7 +44,7 @@ public class ConnectionPool {
 
         for (int x = 0; x < MAX_TRIES_FOR_CONNECTION; x++) {
             try {
-                VirgilConnection connection = free.pop();
+                VirgilConnection connection = free.poll();
                 logger.debug("Releasing connection to [" + requestor.getClass() + "] [" + free.size() + "] remain.");
                 return connection;
             } catch (NoSuchElementException nsee) {

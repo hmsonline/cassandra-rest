@@ -22,7 +22,7 @@ public class HttpTest extends VirgilServerTest {
 	private static final String KEY = "TEST_ROW";
 
 	private static Logger logger = LoggerFactory.getLogger(HttpTest.class);
-
+	
 	@Test
 	public void testHttp() throws Exception {
 		HttpClient client = new HttpClient();
