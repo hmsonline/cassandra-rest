@@ -58,7 +58,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.hmsonline.cassandra.triggers.ConfigurationStore;
-import com.hmsonline.cassandra.triggers.DistributedCommitLog;
+import com.hmsonline.cassandra.triggers.CommitLog;
 import com.hmsonline.cassandra.triggers.TriggerStore;
 import com.hmsonline.virgil.config.VirgilConfiguration;
 import com.hmsonline.virgil.index.Indexer;
@@ -82,7 +82,7 @@ public class CassandraStorage extends ConnectionPoolClient {
             // Force instantiation of the singletons
             ConfigurationStore.getStore().getKeyspace();
             TriggerStore.getStore().getKeyspace();
-            DistributedCommitLog.getLog().getKeyspace();
+            CommitLog.getCommitLog().getKeyspace();
         }
     }
 
