@@ -28,10 +28,6 @@ public class HttpTest extends VirgilServerTest {
 	
 	@Test
 	public void testHttp() throws Exception {
-        ConfigurationStore.getStore().create();
-        TriggerStore.getStore().create();
-        CommitLog.getCommitLog().create();
-
 		HttpClient client = new HttpClient();
 
 		// DROP KEYSPACE
