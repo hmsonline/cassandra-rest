@@ -13,6 +13,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hmsonline.cassandra.triggers.CommitLog;
+import com.hmsonline.cassandra.triggers.ConfigurationStore;
+import com.hmsonline.cassandra.triggers.TriggerStore;
 import com.hmsonline.virgil.ext.PatchMethod;
 
 public class HttpTest extends VirgilServerTest {
@@ -22,9 +25,13 @@ public class HttpTest extends VirgilServerTest {
 	private static final String KEY = "TEST_ROW";
 
 	private static Logger logger = LoggerFactory.getLogger(HttpTest.class);
-
+	
 	@Test
 	public void testHttp() throws Exception {
+        ConfigurationStore.getStore().create();
+        TriggerStore.getStore().create();
+        CommitLog.getCommitLog().create();
+
 		HttpClient client = new HttpClient();
 
 		// DROP KEYSPACE

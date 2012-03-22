@@ -3,6 +3,10 @@ package com.hmsonline.virgil;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
+import com.hmsonline.cassandra.triggers.CommitLog;
+import com.hmsonline.cassandra.triggers.ConfigurationStore;
+import com.hmsonline.cassandra.triggers.TriggerStore;
+
 public abstract class VirgilServerTest {
     static Thread serverThread = null;
 

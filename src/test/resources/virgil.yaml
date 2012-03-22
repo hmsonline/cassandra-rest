@@ -115,13 +115,13 @@ http:
 logging:
 
   # The default level of all loggers. Can be OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: DEBUG
+  level: INFO
 
   # Logger-specific levels.
   loggers:
 
     # Sets the level for 'com.example.app' to DEBUG.
-    com.hmsonline.virgil: DEBUG
+    com.hmsonline.virgil: INFO
     org.apache: WARN
     org.eclipse: WARN
     httpclient.wire: WARN
