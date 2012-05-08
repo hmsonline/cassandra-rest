@@ -35,9 +35,9 @@ public class VirgilConfiguration extends Configuration {
     }
 
     public ConsistencyLevel getConsistencyLevel(String consistencyLevel) {
-        // Defaulting consistency level to ALL
+        // Defaulting consistency level to QUORUM
         if (consistencyLevel == null)
-            return ConsistencyLevel.ALL;
+            return ConsistencyLevel.QUORUM;
         else
             return ConsistencyLevel.valueOf(consistencyLevel);
     }

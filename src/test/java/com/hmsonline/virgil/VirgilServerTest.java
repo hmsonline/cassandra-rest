@@ -3,9 +3,9 @@ package com.hmsonline.virgil;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-import com.hmsonline.cassandra.triggers.CommitLog;
-import com.hmsonline.cassandra.triggers.ConfigurationStore;
-import com.hmsonline.cassandra.triggers.TriggerStore;
+import com.hmsonline.cassandra.triggers.dao.CommitLog;
+import com.hmsonline.cassandra.triggers.dao.ConfigurationStore;
+import com.hmsonline.cassandra.triggers.dao.TriggerStore;
 
 public abstract class VirgilServerTest {
     static Thread serverThread = null;
