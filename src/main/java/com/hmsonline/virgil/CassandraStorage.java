@@ -57,9 +57,9 @@ import org.apache.thrift.TException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import com.hmsonline.cassandra.triggers.ConfigurationStore;
-import com.hmsonline.cassandra.triggers.DistributedCommitLog;
-import com.hmsonline.cassandra.triggers.TriggerStore;
+import com.hmsonline.cassandra.triggers.dao.CommitLog;
+import com.hmsonline.cassandra.triggers.dao.ConfigurationStore;
+import com.hmsonline.cassandra.triggers.dao.TriggerStore;
 import com.hmsonline.virgil.config.VirgilConfiguration;
 import com.hmsonline.virgil.index.Indexer;
 import com.hmsonline.virgil.pool.ConnectionPool;
@@ -82,7 +82,7 @@ public class CassandraStorage extends ConnectionPoolClient {
             // Force instantiation of the singletons
             ConfigurationStore.getStore().getKeyspace();
             TriggerStore.getStore().getKeyspace();
-            DistributedCommitLog.getLog().getKeyspace();
+            CommitLog.getCommitLog().getKeyspace();
         }
     }
 
@@ -284,7 +284,7 @@ public class CassandraStorage extends ConnectionPoolClient {
         }
         
         List<KeySlice> rows = getConnection(keyspace).get_indexed_slices(parent, indexClause, predicate,
-                ConsistencyLevel.ALL);
+                ConsistencyLevel.QUORUM);
         return JsonMarshaller.marshallRows(rows, true);
     }
 
