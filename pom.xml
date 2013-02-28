@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>hms-cassandra-rest</artifactId>
@@ -53,23 +54,20 @@
 			<version>1.9.3</version>
 		</dependency>
 		<dependency>
-			<groupId>com.hmsonline</groupId>
-			<artifactId>hms-cassandra-triggers</artifactId>
-			<version>1.0.0</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>guava</artifactId>
-					<groupId>com.google.guava</groupId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.codehaus.jackson</groupId>
-					<artifactId>jackson-mapper-asl</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.codehaus.jackson</groupId>
-					<artifactId>jackson-core-asl</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.jboss.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>3.2.9.Final</version>
+		</dependency>
+		<!-- Disabling triggers for now. -->
+		<!-- <dependency> <groupId>com.hmsonline</groupId> <artifactId>hms-cassandra-triggers</artifactId> 
+			<version>1.0.0</version> <exclusions> <exclusion> <artifactId>guava</artifactId> 
+			<groupId>com.google.guava</groupId> </exclusion> <exclusion> <groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-mapper-asl</artifactId> </exclusion> <exclusion> <groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-core-asl</artifactId> </exclusion> </exclusions> </dependency> -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.11</version>
 		</dependency>
 		<dependency>
 			<groupId>com.yammer.dropwizard</groupId>
