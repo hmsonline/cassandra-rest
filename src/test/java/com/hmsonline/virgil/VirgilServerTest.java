@@ -3,9 +3,9 @@ package com.hmsonline.virgil;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-import com.hmsonline.cassandra.triggers.dao.CommitLog;
-import com.hmsonline.cassandra.triggers.dao.ConfigurationStore;
-import com.hmsonline.cassandra.triggers.dao.TriggerStore;
+//import com.hmsonline.cassandra.triggers.dao.CommitLog;
+//import com.hmsonline.cassandra.triggers.dao.ConfigurationStore;
+//import com.hmsonline.cassandra.triggers.dao.TriggerStore;
 
 public abstract class VirgilServerTest {
     static Thread serverThread = null;
@@ -16,9 +16,9 @@ public abstract class VirgilServerTest {
                 "-embedded" }));
         serverThread.start();
         Thread.sleep(5000);
-        ConfigurationStore.getStore().create();
-        TriggerStore.getStore().create();
-        CommitLog.getCommitLog().create();
+//        ConfigurationStore.getStore().create();
+//        TriggerStore.getStore().create();
+//        CommitLog.getCommitLog().create();
     }
 
     @AfterClass
