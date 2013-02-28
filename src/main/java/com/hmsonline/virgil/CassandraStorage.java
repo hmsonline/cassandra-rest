@@ -79,9 +79,9 @@ public class CassandraStorage extends ConnectionPoolClient {
         ConnectionPool.initializePool();
         if (VirgilConfiguration.isEmbedded()) {
             // Force instantiation of the singletons
-            ConfigurationStore.getStore().create();
-            TriggerStore.getStore().create();
-            CommitLog.getCommitLog().create();
+            //ConfigurationStore.getStore().create();
+            //TriggerStore.getStore().create();
+            //CommitLog.getCommitLog().create();
         }
     }
 
