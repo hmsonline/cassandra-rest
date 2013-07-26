@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>com.hmsonline</groupId>
 			<artifactId>hms-cassandra-mapreduce</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
